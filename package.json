@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "keywords": [],
@@ -13,7 +13,13 @@
   "dependencies": {
     "aws-sdk": "^2.771.0",
     "dotenv": "^8.2.0",
+    "elasticsearch": "^16.7.1",
     "express": "^4.17.1",
-    "mongoose": "^5.10.9"
+    "http-aws-es": "^6.0.0",
+    "mongoose": "^5.10.9",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5"
   }
 }
