@@ -4,14 +4,17 @@ const mongoose = require("mongoose");
 const CampaignSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   location: {
-    type:String
+    coordinates: {
+      latitude: Number,
+      longitude: Number
+    },
   },
   date: {
-    type: String
-  }
+    type: String,
+  },
 });
 
 module.exports = Campaign = mongoose.model("campaigns", CampaignSchema);

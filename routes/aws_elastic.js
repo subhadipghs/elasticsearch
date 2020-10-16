@@ -2,17 +2,19 @@ const express = require("express");
 const router = express.Router();
 const elastic = require("../utils/ElasticClient");
 
+/**
+ * Search for a campaign.
+ * 
+ * @method  GET
+ * @route  /api/es/
+ */
 router.get("/es/", async (req, res) => {
   try {
-    const result = await elastic.search({
-      index: "",
-      body: {
-        query: {
-          match_all: {},
-        },
-      },
+    const { campaignId } = req.params;
+    const res = await client.ping({ requestTimeout: 40000 });
+    return res.json({
+      response: res
     });
-    return res.json({ body: result });
   } catch (err) {
     console.warn(err);
     return res.json({
@@ -20,5 +22,6 @@ router.get("/es/", async (req, res) => {
     });
   }
 });
+
 
 module.exports = router;

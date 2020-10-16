@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "cross-env NODE_ENV=dev nodemon server.js",
     "start": "node server.js"
   },
   "keywords": [],
@@ -20,6 +20,8 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.5"
   }
 }
